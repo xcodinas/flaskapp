@@ -11,4 +11,4 @@ def generate_password_hash(password):
 def verify_password_hash(password, password_hash):
     """Method to centralize the verification of password hash
     """
-    return bcrypt.hashpw(password, password_hash) == password_hash
+    return bcrypt.hashpw(password.encode(), password_hash) == password_hash
